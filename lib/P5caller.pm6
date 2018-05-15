@@ -1,5 +1,6 @@
 use v6.c;
-unit module P5caller:ver<0.0.3>;
+
+unit module P5caller:ver<0.0.4>:auth<cpan:ELIZABETH>;
 
 proto sub caller(|) is export {*}
 multi sub caller(            --> List:D) { backtrace(1)     }

@@ -2,6 +2,9 @@ Revision history for P5caller
 
 {{$NEXT}}
 
+0.0.4  2018-05-15T19:46:08+02:00
+    - add authority information
+
 0.0.3  2018-04-25T18:45:44+02:00
     - P5caller must be a module, not a class
 
