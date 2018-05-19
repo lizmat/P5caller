@@ -2,7 +2,7 @@ use v6.c;
 use Test;
 use P5caller;
 
-plan 12;
+plan 13;
 
 ok defined(::('&caller')),          'is &caller imported?';
 ok !defined(P5caller::{'&caller'}), 'is &caller externally NOT accessible?';
@@ -18,7 +18,11 @@ sub bar {
         isa-ok $code, Sub,              'did we get a Sub';
     }
 }
-
 foo();
+
+sub baz() {
+    is caller(:scalar), 'GLOBAL', 'did we get the right package name';
+}
+baz();
 
 # vim: ft=perl6 expandtab sw=4
