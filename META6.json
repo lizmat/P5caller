@@ -5,7 +5,7 @@
   ],
   "build-depends" : [ ],
   "depends" : [ ],
-  "description" : "Implement Perl 5's caller() built-in",
+  "description" : "Implement Perl's caller() built-in",
   "license" : "Artistic-2.0",
   "name" : "P5caller",
   "perl" : "6.c",
@@ -19,5 +19,5 @@
     "CPAN5"
   ],
   "test-depends" : [ ],
-  "version" : "0.0.6"
+  "version" : "0.0.7"
 }

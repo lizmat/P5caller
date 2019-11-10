@@ -1,6 +1,6 @@
 use v6.c;
 
-unit module P5caller:ver<0.0.6>:auth<cpan:ELIZABETH>;
+unit module P5caller:ver<0.0.7>:auth<cpan:ELIZABETH>;
 
 proto sub caller(|) is export {*}
 multi sub caller(Scalar:U) { backtrace(1, True)     }
@@ -37,7 +37,7 @@ my sub backtrace($down is copy, $scalar?) {
 
 =head1 NAME
 
-P5caller - Implement Perl 5's caller() built-in
+P5caller - Implement Perl's caller() built-in
 
 =head1 SYNOPSIS
 
@@ -51,7 +51,7 @@ P5caller - Implement Perl 5's caller() built-in
 
 =head1 DESCRIPTION
 
-This module tries to mimic the behaviour of the C<caller> function of Perl 5
+This module tries to mimic the behaviour of the C<caller> function of Perl
 as closely as possible.
 
 =head1 ORIGINAL PERL 5 DOCUMENTATION
@@ -130,13 +130,12 @@ as closely as possible.
 
 =head1 PORTING CAVEATS
 
-In Perl 5, C<caller> can return an 11 element list.  In the Perl 6
-implementation only the first 4 elements are the same as in Perl 5:
-package, filename, line, subname.  The fifth element is actually the
-C<Sub> or C<Method> object and as such provides further introspection
-possibilities not found in Perl 5.
+In Perl, C<caller> can return an 11 element list.  In the Raku implementation
+only the first 4 elements are the same as in Perl: package, filename, line,
+subname.  The fifth element is actually the C<Sub> or C<Method> object and
+as such provides further introspection possibilities not found in Perl.
 
-As there is no such thing as C<scalar> or C<list> context in Perl 6, one
+As there is no such thing as C<scalar> or C<list> context in Raku, one
 must specify a C<:scalar> named parameter to emulate the scalar context
 return value.
 
@@ -151,7 +150,7 @@ Pull Requests are welcome.
 
 Copyright 2018-2019 Elizabeth Mattijsen
 
-Re-imagined from Perl 5 as part of the CPAN Butterfly Plan.
+Re-imagined from Perl as part of the CPAN Butterfly Plan.
 
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
 
