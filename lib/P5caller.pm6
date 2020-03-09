@@ -19,7 +19,9 @@ multi sub caller(Int() $down, :$scalar!)
 multi sub caller(Int() $down) { backtrace($down) }
 
 my sub backtrace($down is copy, $scalar?) {
-    $down += 3;  # offset heuristic
+    my $comp = ($*RAKU // $*PERL).compiler; # $*PERL is deprecated
+    # Older versions of Rakudo were also erroneously including extra frames from Backtrace itself.
+    $down += $comp.name eq 'rakudo' && $comp.version < v2020.02.1.109.g7c3681647 ?? 3 !! 2;
     my $backtrace := Backtrace.new;
     my $index = 0;
     $index = $backtrace.next-interesting-index($index, :named, :noproto)
