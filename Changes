@@ -2,8 +2,12 @@ Revision history for P5caller
 
 {{$NEXT}}
 
+0.0.8  2020-03-10T10:15:26+01:00
+    - Made the backtracking logic Raku version independent
+    - Update copyright year
+
 0.0.7  2019-11-10T13:46:30+01:00
-    - changed Perl 6 to Raku, and Perl 5 to Perl
+    - Changed Perl 6 to Raku, and Perl 5 to Perl
 
 0.0.6  2019-03-17T15:44:51+01:00
     - Deprecate :scalar in favour of Scalar as first positional

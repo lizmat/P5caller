@@ -111,7 +111,7 @@ Source can be located at: https://github.com/lizmat/P5caller . Comments and Pull
 COPYRIGHT AND LICENSE
 =====================
 
-Copyright 2018-2019 Elizabeth Mattijsen
+Copyright 2018-2020 Elizabeth Mattijsen
 
 Re-imagined from Perl as part of the CPAN Butterfly Plan.
 

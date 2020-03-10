@@ -1,6 +1,6 @@
 use v6.c;
 
-unit module P5caller:ver<0.0.7>:auth<cpan:ELIZABETH>;
+unit module P5caller:ver<0.0.8>:auth<cpan:ELIZABETH>;
 
 proto sub caller(|) is export {*}
 multi sub caller(Scalar:U) { backtrace(1, True)     }
@@ -9,23 +9,25 @@ multi sub caller(:$scalar!)
 {
     backtrace(1, True)
 }
-multi sub caller() { backtrace(1) }
+multi sub caller() { backtrace(1, False) }
 multi sub caller(Scalar:U, Int() $down) { backtrace($down, True) }
 multi sub caller(Int() $down, :$scalar!)
   is DEPRECATED('Scalar as first positional')
 {
     backtrace($down, True)
 }
-multi sub caller(Int() $down) { backtrace($down) }
+multi sub caller(Int() $down) { backtrace($down, False) }
 
-my sub backtrace($down is copy, $scalar?) {
-    $down += 3;  # offset heuristic
+my sub backtrace($down, $scalar) {
     my $backtrace := Backtrace.new;
     my $index = 0;
+    until $backtrace[$index].code.package.^name ne 'P5caller' {
+        $index = $backtrace.next-interesting-index($index, :named, :noproto)
+    }
     $index = $backtrace.next-interesting-index($index, :named, :noproto)
       for ^$down;
 
-    with Backtrace.new.AT-POS($index) {
+    with $backtrace[$index] {
         my $package = .subname eq '<unit>' ?? 'GLOBAL' !! .code.package.^name;
         $scalar
           ?? $package
@@ -148,7 +150,7 @@ Pull Requests are welcome.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2018-2019 Elizabeth Mattijsen
+Copyright 2018-2020 Elizabeth Mattijsen
 
 Re-imagined from Perl as part of the CPAN Butterfly Plan.
 
