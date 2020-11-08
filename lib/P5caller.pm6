@@ -1,6 +1,6 @@
 use v6.c;
 
-unit module P5caller:ver<0.0.8>:auth<cpan:ELIZABETH>;
+unit module P5caller:ver<0.0.9>:auth<cpan:ELIZABETH>;
 
 proto sub caller(|) is export {*}
 multi sub caller(Scalar:U) { backtrace(1, True)     }
@@ -20,7 +20,7 @@ multi sub caller(Int() $down) { backtrace($down, False) }
 
 my sub backtrace($down, $scalar) {
     my $backtrace := Backtrace.new;
-    my $index = 0;
+    my $index = $backtrace.next-interesting-index(-1);
     until $backtrace[$index].code.package.^name ne 'P5caller' {
         $index = $backtrace.next-interesting-index($index, :named, :noproto)
     }

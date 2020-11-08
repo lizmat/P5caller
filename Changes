@@ -2,6 +2,9 @@ Revision history for P5caller
 
 {{$NEXT}}
 
+0.0.9  2020-11-08T12:35:52+01:00
+    - Make backtracking logic work on recent Raku versions
+
 0.0.8  2020-03-10T10:15:26+01:00
     - Made the backtracking logic Raku version independent
     - Update copyright year
