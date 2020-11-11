@@ -1,6 +1,6 @@
-use v6.c;
+use v6.*;
 
-unit module P5caller:ver<0.0.9>:auth<cpan:ELIZABETH>;
+unit module P5caller:ver<0.0.10>:auth<cpan:ELIZABETH>;
 
 proto sub caller(|) is export {*}
 multi sub caller(Scalar:U) { backtrace(1, True)     }
@@ -39,7 +39,7 @@ my sub backtrace($down, $scalar) {
 
 =head1 NAME
 
-P5caller - Implement Perl's caller() built-in
+Raku port of Perl's caller() built-in
 
 =head1 SYNOPSIS
 
@@ -53,7 +53,7 @@ P5caller - Implement Perl's caller() built-in
 
 =head1 DESCRIPTION
 
-This module tries to mimic the behaviour of the C<caller> function of Perl
+This module tries to mimic the behaviour of Perl's C<caller> function in Raku
 as closely as possible.
 
 =head1 ORIGINAL PERL 5 DOCUMENTATION

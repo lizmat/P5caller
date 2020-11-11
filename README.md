@@ -1,7 +1,7 @@
 NAME
 ====
 
-P5caller - Implement Perl's caller() built-in
+Raku port of Perl's caller() built-in
 
 SYNOPSIS
 ========
@@ -17,7 +17,7 @@ SYNOPSIS
 DESCRIPTION
 ===========
 
-This module tries to mimic the behaviour of the `caller` function of Perl as closely as possible.
+This module tries to mimic the behaviour of Perl's `caller` function in Raku as closely as possible.
 
 ORIGINAL PERL 5 DOCUMENTATION
 =============================
