@@ -2,6 +2,9 @@ Revision history for P5caller
 
 {{$NEXT}}
 
+0.0.11  2020-11-12T12:41:11+01:00
+     - Change name of distribution in META info
+
 0.0.10  2020-11-11T17:51:33+01:00
     - Change name of distribution
     - Force to highest possible Raku version

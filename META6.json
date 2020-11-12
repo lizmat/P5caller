@@ -7,7 +7,7 @@
   ],
   "depends": [
   ],
-  "description": "Implement Perl's caller() built-in",
+  "description": "Raku port of Perl's caller() built-in",
   "license": "Artistic-2.0",
   "name": "P5caller",
   "perl": "6.c",
@@ -23,5 +23,5 @@
   ],
   "test-depends": [
   ],
-  "version": "0.0.10"
+  "version": "0.0.11"
 }

@@ -1,6 +1,6 @@
 use v6.*;
 
-unit module P5caller:ver<0.0.10>:auth<cpan:ELIZABETH>;
+unit module P5caller:ver<0.0.11>:auth<cpan:ELIZABETH>;
 
 proto sub caller(|) is export {*}
 multi sub caller(Scalar:U) { backtrace(1, True)     }
@@ -157,3 +157,5 @@ Re-imagined from Perl as part of the CPAN Butterfly Plan.
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
 
 =end pod
+
+# vim: expandtab shiftwidth=4
