@@ -1,6 +1,6 @@
 use v6.*;
 
-unit module P5caller:ver<0.0.11>:auth<cpan:ELIZABETH>;
+unit module P5caller:ver<0.0.12>:auth<zef:lizmat>;
 
 proto sub caller(|) is export {*}
 multi sub caller(Scalar:U) { backtrace(1, True)     }
@@ -53,8 +53,8 @@ Raku port of Perl's caller() built-in
 
 =head1 DESCRIPTION
 
-This module tries to mimic the behaviour of Perl's C<caller> function in Raku
-as closely as possible.
+This module tries to mimic the behaviour of Perl's C<caller> built-in
+as closely as possible in the Raku Programming Language.
 
 =head1 ORIGINAL PERL 5 DOCUMENTATION
 
@@ -143,14 +143,14 @@ return value.
 
 =head1 AUTHOR
 
-Elizabeth Mattijsen <liz@wenzperl.nl>
+Elizabeth Mattijsen <liz@raku.rocks>
 
 Source can be located at: https://github.com/lizmat/P5caller . Comments and
 Pull Requests are welcome.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2018-2020 Elizabeth Mattijsen
+Copyright 2018, 2019, 2020, 2021 Elizabeth Mattijsen
 
 Re-imagined from Perl as part of the CPAN Butterfly Plan.
 

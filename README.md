@@ -1,3 +1,5 @@
+[![Actions Status](https://github.com/lizmat/P5caller/workflows/test/badge.svg)](https://github.com/lizmat/P5caller/actions)
+
 NAME
 ====
 
@@ -17,7 +19,7 @@ SYNOPSIS
 DESCRIPTION
 ===========
 
-This module tries to mimic the behaviour of Perl's `caller` function in Raku as closely as possible.
+This module tries to mimic the behaviour of Perl's `caller` built-in as closely as possible in the Raku Programming Language.
 
 ORIGINAL PERL 5 DOCUMENTATION
 =============================
@@ -104,14 +106,14 @@ As there is no such thing as `scalar` or `list` context in Raku, one must specif
 AUTHOR
 ======
 
-Elizabeth Mattijsen <liz@wenzperl.nl>
+Elizabeth Mattijsen <liz@raku.rocks>
 
 Source can be located at: https://github.com/lizmat/P5caller . Comments and Pull Requests are welcome.
 
 COPYRIGHT AND LICENSE
 =====================
 
-Copyright 2018-2020 Elizabeth Mattijsen
+Copyright 2018, 2019, 2020, 2021 Elizabeth Mattijsen
 
 Re-imagined from Perl as part of the CPAN Butterfly Plan.
 
