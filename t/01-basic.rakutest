@@ -1,12 +1,9 @@
-use v6.*;
 use Test;
 use P5caller;
-%*ENV<RAKUDO_NO_DEPRECATIONS> = True;
 
-plan 14;
+plan 12;
 
-ok defined(::('&caller')),          'is &caller imported?';
-ok !defined(P5caller::{'&caller'}), 'is &caller externally NOT accessible?';
+ok defined(::('&caller')), 'is &caller imported?';
 
 sub foo { bar }
 my $the-line = $?LINE - 1;
@@ -25,10 +22,5 @@ sub BAZ() {
     is caller(Scalar), 'GLOBAL', 'did we get the right package name';
 }
 BAZ();
-
-sub baz() {
-    is caller(:scalar), 'GLOBAL', 'did we get the right package name';
-}
-baz();
 
 # vim: expandtab shiftwidth=4

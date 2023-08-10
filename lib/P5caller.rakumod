@@ -1,21 +1,9 @@
-use v6.*;
-
-unit module P5caller:ver<0.0.12>:auth<zef:lizmat>;
+unit module P5caller;
 
 proto sub caller(|) is export {*}
 multi sub caller(Scalar:U) { backtrace(1, True)     }
-multi sub caller(:$scalar!)
-  is DEPRECATED('Scalar as first positional')
-{
-    backtrace(1, True)
-}
 multi sub caller() { backtrace(1, False) }
 multi sub caller(Scalar:U, Int() $down) { backtrace($down, True) }
-multi sub caller(Int() $down, :$scalar!)
-  is DEPRECATED('Scalar as first positional')
-{
-    backtrace($down, True)
-}
 multi sub caller(Int() $down) { backtrace($down, False) }
 
 my sub backtrace($down, $scalar) {
@@ -145,12 +133,16 @@ return value.
 
 Elizabeth Mattijsen <liz@raku.rocks>
 
+If you like this module, or what I’m doing more generally, committing to a
+L<small sponsorship|https://github.com/sponsors/lizmat/>  would mean a great
+deal to me!
+
 Source can be located at: https://github.com/lizmat/P5caller . Comments and
 Pull Requests are welcome.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2018, 2019, 2020, 2021 Elizabeth Mattijsen
+Copyright 2018, 2019, 2020, 2021, 2023 Elizabeth Mattijsen
 
 Re-imagined from Perl as part of the CPAN Butterfly Plan.
 
